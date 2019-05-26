@@ -4,15 +4,23 @@ class Direwolf {
     this.home = home || 'Beyond the Wall';
     this.size = size || 'Massive';
     this.starksToProtect = [];
+    this.huntsWhiteWalkers = true;
   }
 
   protect(person) {
   	if(this.home === person.location) {
-  	this.starksToProtect.push(person)	
+  	this.starksToProtect.push(person);	
   	}
-  	if(this.starksToProtect > 2) {
-  		this.starksToProtect.pop()
-  	}
+  	if(this.starksToProtect.length > 2) {
+  		this.starksToProtect.pop();
+    }
+    this.huntsWhiteWalkers = false;
+    person.safe = true;
+  }
+
+  leave(person) {
+    this.starksToProtect.pop();
+    person.safe = false;
   }
 }
 

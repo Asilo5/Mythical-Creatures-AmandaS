@@ -117,14 +117,14 @@ describe('Direwolf', () => {
     assert.equal(direwolf2.starksToProtect[1].name, 'Bran');
   });
 
-  it.skip('Stark should start off unsafe', () => {
+  it('Stark should start off unsafe', () => {
     const stark = new Stark('John', 'Winterfell');
 
     assert.equal(stark.safe, false);
     assert.equal(stark.houseWords(), 'Winter is Coming');
   });
 
-  it.skip('should change house words once protected', () => {
+  it('should change house words once protected', () => {
     const direwolf = new Direwolf('Nymeria', 'Dorn');
     const stark1 = new Stark('Arya', 'Dorn');
     const stark2 = new Stark('Sansa', 'Dorn');
@@ -140,7 +140,7 @@ describe('Direwolf', () => {
     assert.equal(stark2.houseWords(), 'Winter is Coming');
   });
 
-  it.skip('should hunt white walkers when not protecting Starks', () => {
+  it('should hunt white walkers when not protecting Starks', () => {
     const direwolf = new Direwolf('Nymeria', 'Winterfell');
     const stark = new Stark('Sansa');
 
@@ -150,7 +150,7 @@ describe('Direwolf', () => {
     assert.equal(direwolf.huntsWhiteWalkers, false);
   });
 
-  it.skip('should be able to stop protecting Starks', () => {
+  it('should be able to stop protecting Starks', () => {
     const direwolf1 = new Direwolf('Summer', 'Winterfell');
     const direwolf2 = new Direwolf('Lady', 'Winterfell');
     const stark1 = new Stark('Sansa');
